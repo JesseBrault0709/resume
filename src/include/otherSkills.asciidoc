@@ -1,0 +1,10 @@
+== Other Skills
+
+* *Server Administration*: I maintain a personal virtual private server at https://digitalocean.com/[digitalocean.com]
+running Ubuntu, where I host a variety of services and websites. Tasks I often do include:
+package administration, system updates, continuous integration, security maintenance,
+configuring `apache`, updating TLS certificates, automating repetitive tasks, and so on.
+
+* *Web and App Design*: I have an unfinished design at Figma for _The Pantry App_.
+footnote:[This design can be viewed at
+https://www.figma.com/file/VKrirPQi2FneCPaP3XdPzn/Pantry-App-Design?node-id=0-1&t=FjMN9BhEjPnBMl2r-0]

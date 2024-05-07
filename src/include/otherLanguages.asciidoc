@@ -1,0 +1,3 @@
+* *Scripting*: Ruby, Lua.
+* *Documentation*: Markdown, Asciidoc.
+* *Typesetting*: TeX, LaTeX.

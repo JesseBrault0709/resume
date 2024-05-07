@@ -1,0 +1,8 @@
+=== JavaScript/TypeScript/HTML
+
+* *jbci*, or *Jesse Brault Continuous Integration*: A TypeScript CI program which
+listens to GitHub webhooks and then executes pre-configured shell scripts on my
+cloud server based on the webhook payload. 2022-2024.
+* *jb-api*: A very simple TypeScript utility backend for my personal websites, 2023.
+* *Meals Made Easy*: a meal-planning web-app built with TypeScript and React as a part
+of my participation in *Co.Lab*. 2021.

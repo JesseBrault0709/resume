@@ -1,0 +1,5 @@
+bin
+build
+.DS_Store
+.idea
+builds

@@ -1,0 +1,66 @@
+= Jesse Brault — <%= @job_title %>
+:icons: font
+:icon-set: fas
+:pdf-theme: build/cv-theme.yml
+
+
+<%= part :objective %>
+
+== Languages
+
+<% if @is_jvm %>
+<%= parts :jvmLanguages, :webLanguages %>
+<% else %>
+<%= parts :webLanguages, :jvmLanguages %>
+<% end %>
+<%= part :otherLanguages %>
+
+== Frameworks, Libraries, and Technologies
+
+<% if @is_jvm %>
+<%= parts :jvmFrameworks, :webFrameworks %>
+<% else %>
+<%= parts :webFrameworks, :jvmFrameworks %>
+<% end %>
+<%= part :otherTechnologies %>
+
+== Selected Projects
+
+<% if @is_jvm %>
+<%= parts :jvmProjects, :webProjects %>
+<% else %>
+<%= parts :webProjects, :jvmProjects %>
+<% end %>
+
+<%= part :professionalDevelopment %>
+
+<%= part :otherSkills %>
+
+== Human Languages
+
+* *English*: native speaker.
+* *German*: strong working knowledge.
+
+== Education
+
+* *The Juilliard School*, _Master of Music_, Orchestral Conducting. 2015–2018.
+* *St. Olaf College*, _Bachelor of Music, summa cum laude_,
+Music Theory and Composition. 2009–2013. GPA: 3.91 (4.0 scale).
+
+== Contact
+
+[cols="1, 1",frame=none,grid=none]
+|===
+|
+icon:envelope[] jbrault@mac.com
+
+icon:phone[] +49 175 4119256
+
+icon:map-marked[] Galvanistr. 14, 10587 Berlin, Germany.
+
+|
+icon:github@fab[] https://github.com/JesseBrault0709[Github]: JesseBrault0709
+
+icon:linkedin@fab[] https://www.linkedin.com/in/jessebrault0709/[LinkedIn]: JesseBrault0709
+
+|===
