@@ -12,5 +12,5 @@ Command-line options for `./resume`:
 * `--job_title`: defaults to `Full-Stack Software Engineer`.
 * `--jvm`: emphasize JVM languages/projects (default).
 * `--web`: emphasize web languages/projects.
-* `--pageSize`: defaults to `a4`.
+* `--page_size`: defaults to `a4`.
 * `--open`: automatically open the built PDF in the Preview app (Mac OS only).
