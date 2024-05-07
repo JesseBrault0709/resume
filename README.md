@@ -2,7 +2,7 @@
 
 **NOTE**: if you would like a copy of the résumé in PDF form, please message me.
 
-To make creating variations of my résumé/cv easier, I created a simple ruby program. 
+To make creating variations of my résumé/cv easier, I created a simple ruby program. The output is a pdf using `asciidoctor-pdf`. 
 
 To build from the source, simply run `./resume` from the root directory. Pre-requisites:
 * `ruby` and `bundler` are installed
