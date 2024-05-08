@@ -1,0 +1,15 @@
+[cols="^1, ^1, ^1, ^1",frame=none,grid=none]
+|===
+|
+icon:envelope[] jbrault@mac.com
+
+|
+icon:phone[] +49 175 4119256
+
+|
+icon:map-marked[] Berlin, Germany
+
+|
+icon:github@fab[] icon:linkedin@fab[] JesseBrault0709
+
+|===

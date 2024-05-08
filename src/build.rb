@@ -56,6 +56,9 @@ class Build
     end
     FileUtils.makedirs(@build_dir)
 
+    # Off for now, until we figure out how to add image.
+    # FileUtils.copy_file('images/selfPhoto.jpg', "#{@build_dir}/selfPhoto.jpg")
+
     theme = ERB.new(File.read('src/cv-theme.yml.erb')).result(binding)
     File.open("#{@build_dir}/cv-theme.yml", 'w') do |file|
       file.write theme

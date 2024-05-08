@@ -3,6 +3,7 @@
 :icon-set: fas
 :pdf-theme: <%= @build_dir %>/cv-theme.yml
 
+<%= part :contact %>
 
 <%= part :objective %>
 
@@ -32,9 +33,13 @@
 <%= parts :webProjects, :jvmProjects %>
 <% end %>
 
+<%= part :programmingInterests %>
+
 <%= part :professionalDevelopment %>
 
 <%= part :otherSkills %>
+
+<%= part :otherExperience %>
 
 == Human Languages
 
@@ -46,21 +51,3 @@
 * *The Juilliard School*, _Master of Music_, Orchestral Conducting. 2015–2018.
 * *St. Olaf College*, _Bachelor of Music, summa cum laude_,
 Music Theory and Composition. 2009–2013. GPA: 3.91 (4.0 scale).
-
-== Contact
-
-[cols="1, 1",frame=none,grid=none]
-|===
-|
-icon:envelope[] jbrault@mac.com
-
-icon:phone[] +49 175 4119256
-
-icon:map-marked[] Galvanistr. 14, 10587 Berlin, Germany.
-
-|
-icon:github@fab[] https://github.com/JesseBrault0709[Github]: JesseBrault0709
-
-icon:linkedin@fab[] https://www.linkedin.com/in/jessebrault0709/[LinkedIn]: JesseBrault0709
-
-|===

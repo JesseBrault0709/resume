@@ -6,5 +6,4 @@ package administration, system updates, continuous integration, security mainten
 configuring `apache`, updating TLS certificates, automating repetitive tasks, and so on.
 
 * *Web and App Design*: I have an unfinished design at Figma for _The Pantry App_.
-footnote:[This design can be viewed at
-https://www.figma.com/file/VKrirPQi2FneCPaP3XdPzn/Pantry-App-Design?node-id=0-1&t=FjMN9BhEjPnBMl2r-0]
+footnote:[This design can be viewed https://www.figma.com/file/VKrirPQi2FneCPaP3XdPzn/Pantry-App-Design?node-id=0-1&t=FjMN9BhEjPnBMl2r-0[here].]
