@@ -9,8 +9,10 @@ To build from the source, simply run `./resume` from the root directory. Pre-req
 * run `bundler install`
 
 Command-line options for `./resume`:
-* `--job_title`: defaults to `Full-Stack Software Engineer`.
+* `--build-name` | `-n`: the name of the build folder to be created in `builds`, as well as the name of the pdf to generate.
+* `--include_time` | `-t`: include the time in the build folder name.
+* `--job_title` | `-j`: defaults to `Full-Stack Software Engineer`.
 * `--jvm`: emphasize JVM languages/projects (default).
 * `--web`: emphasize web languages/projects.
 * `--page_size`: defaults to `a4`.
-* `--open`: automatically open the built PDF in the Preview app (Mac OS only).
+* `--open` | `-o`: automatically open the built PDF in the Preview app (Mac OS only).
