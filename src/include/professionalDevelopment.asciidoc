@@ -1,6 +1,6 @@
 == Professional Development
 
-* *Co.Lab | You Belong in Tech*: developer for team _Meals Made Easy_,
+* *Co.Lab | You Belong in Tech*: sole developer for team _Meals Made Easy_,
 where I worked closely with a product manager and designer to develop
 a viable meal-planning solution as a web-app in less than six weeks.
 2021.

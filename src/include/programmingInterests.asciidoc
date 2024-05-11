@@ -1,14 +1,15 @@
-== Programming Interests
+== General Programming Interests/Skills
 [cols="1, 1, 1",frame=none,grid=none]
 |===
 a|
-* Programming languages
-* Parsing/lexing/syntax-trees, compilation
-a|
 * Web development
+* Test-driven development
 * Continuous integration/deployment
 a|
-* Open source software
-* Testing
+* Programming languages
+* Compilers
+* Git, Github
+a|
+* Open-source software
 * Creating tools and plugins
 |===

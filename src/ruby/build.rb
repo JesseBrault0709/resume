@@ -59,12 +59,12 @@ class Build
     # Off for now, until we figure out how to add image.
     # FileUtils.copy_file('images/selfPhoto.jpg', "#{@build_dir}/selfPhoto.jpg")
 
-    theme = ERB.new(File.read('src/cv-theme.yml.erb')).result(binding)
+    theme = ERB.new(File.read('src/ruby/cv-theme.yml.erb')).result(binding)
     File.open("#{@build_dir}/cv-theme.yml", 'w') do |file|
       file.write theme
     end
 
-    cv = ERB.new(File.read('src/cv.asciidoc.erb')).result(binding)
+    cv = ERB.new(File.read('src/ruby/cv.asciidoc.erb')).result(binding)
     File.open("#{@build_dir}/cv.asciidoc", 'w') do |file|
       file.write cv
     end
