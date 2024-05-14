@@ -1,11 +1,57 @@
 = Jesse Brault — <%= @job_title %>
 :icons: font
 :icon-set: fas
-:pdf-theme: <%= @build_dir %>/cv-theme.yml
+:pdf-theme: <%= path_before_theme %>cv-theme.yml
+:imagesdir: ../../images
 
-<%= part :contact %>
+<% if @cover_page %>
+'''
 
+image::selfPhoto.jpg[]
+
+[cols="^1, ^1, ^1",frame=none,grid=none]
+|===
+|
+icon:envelope[] mailto:jbrault@mac.com[jbrault@mac.com]
+
+|
+icon:linkedin@fab[] https://linkedin.com/in/JesseBrault0709[JesseBrault0709]
+
+|
+icon:github@fab[] https://github.com/JesseBrault0709[JesseBrault0709]
+|===
+
+[cols="^1, ^1",frame=none,grid=none]
+|===
+|
+icon:phone[] +49 175 4119256
+
+|
+icon:map-marked[] Berlin, Germany
+
+|===
+
+'''
+<% else %>
+
+[cols="^1, ^1, ^1, ^1",frame=none,grid=none]
+|===
+|
+icon:envelope[] jbrault@mac.com
+
+|
+icon:phone[] +49 175 4119256
+
+|
+icon:map-marked[] Berlin, Germany
+
+|
+icon:github@fab[] icon:linkedin@fab[] JesseBrault0709
+
+|===
+<% end %>
 <%= part :objective %>
+<%= @cover_page ? '<<<' : '' %>
 
 == Languages
 
@@ -15,7 +61,6 @@
 <%= parts :webLanguages, :jvmLanguages %>
 <% end %>
 <%= part :otherLanguages %>
-
 == Frameworks, Libraries, and Technologies
 
 <% if @is_jvm %>
@@ -24,7 +69,6 @@
 <%= parts :webFrameworks, :jvmFrameworks %>
 <% end %>
 <%= part :otherTechnologies %>
-
 == Selected Projects
 
 <% if @is_jvm %>
@@ -32,15 +76,10 @@
 <% else %>
 <%= parts :webProjects, :jvmProjects %>
 <% end %>
-
 <%= part :programmingInterests %>
-
 <%= part :professionalDevelopment %>
-
 <%= part :otherSkills %>
-
 <%= part :otherExperience %>
-
 == Human Languages
 
 * *English*: native speaker.

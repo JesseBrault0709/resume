@@ -10,29 +10,52 @@ class BuildCli < Thor
     true
   end
 
+  class_option 'build-name', aliases: :n, default: 'general', desc: 'the name of the build'
+  class_option 'doc-type', aliases: :k, default: 'resume', desc: 'the type of the document, such as "resume" or "cv"'
+  class_option 'job-title', aliases: :j, default: 'Full-Stack Software Engineer', desc: 'the job title, such as "Software Engineer"'
+  class_option 'cover-page', aliases: :c, type: :boolean, desc: 'include the cover page'
+  class_option :jvm, type: :boolean, default: true, desc: 'emphasize jvm experience'
+  class_option :web, type: :boolean, desc: 'emphasize web experience'
+  class_option 'page-size', default: 'a4', desc: 'the page size, such as "a4" or "letter"'
+
   desc 'build', 'build the résumé'
-  option :build_name, aliases: :n, default: 'general'
-  option :include_time, aliases: :t, type: :boolean
-  option :job_title, aliases: :j, default: 'Full-Stack Software Engineer'
-  option :jvm, type: :boolean, default: true
-  option :web, type: :boolean
-  option :page_size, default: 'a4'
-  option :open, aliases: :o, type: :boolean
+  option 'include-time', type: :boolean, desc: 'include the time in the build-folder name'
+  option :open, aliases: :o, type: :boolean, desc: 'automatically open the built resume in Preview (Mac OS only)'
   def build
     Build.new(
-      options[:build_name],
-      options[:include_time],
-      options[:job_title],
+      :build,
+      options['build-name'],
+      options['doc-type'],
+      options['include-time'],
+      options['job-title'],
+      options['cover-page'],
       options[:jvm],
-      options[:page_size],
+      options['page-size'],
       options[:open]
     ).build
+  end
+
+  desc 'create', 'create a build which can be manually modified and built directly by asciidoctor-pdf'
+  def create
+    Build.new(
+      :create,
+      options['build-name'],
+      options['doc-type'],
+      false,
+      options['job-title'],
+      options['cover-page'],
+      options[:jvm],
+      options['page-size'],
+      false
+    ).files(true)
   end
 end
 
 class Build
-  def initialize(build_name, include_time, job_title, is_jvm, page_size, open)
+  def initialize(command, build_name, doc_type, include_time, job_title, cover_page, is_jvm, page_size, open)
+    @command = command
     @build_name = build_name
+    @doc_type = doc_type
 
     dt = DateTime.now
     date = sprintf('%d.%02d.%02d', dt.year, dt.month, dt.day)
@@ -46,11 +69,17 @@ class Build
 
     @is_jvm = is_jvm
     @job_title = job_title
+    @cover_page = cover_page
     @page_size = page_size
     @open = open
   end
 
   def build
+    files(false)
+    convert_and_open
+  end
+
+  def files(include_script)
     if FileTest.exist?(@build_dir)
       FileUtils.rm_r(@build_dir)
     end
@@ -65,20 +94,30 @@ class Build
     end
 
     cv = ERB.new(File.read('src/ruby/cv.asciidoc.erb')).result(binding)
-    File.open("#{@build_dir}/cv.asciidoc", 'w') do |file|
+    File.open("#{@build_dir}/#{@build_name}-#{@doc_type}.asciidoc", 'w') do |file|
       file.write cv
     end
 
+    if include_script
+      build_script = ERB.new(File.read('src/ruby/build.sh.erb')).result(binding)
+      File.open("#{@build_dir}/build", 'w') do |file|
+        file.write build_script
+        file.chmod(0755)
+      end
+    end
+  end
+
+  def convert_and_open
     out_name = if @build_name.empty?
-                @is_jvm ? 'cv-jvm.pdf' : 'cv-web.pdf'
-              else
-                "#{@build_name}.pdf"
-              end
+                 @is_jvm ? 'cv-jvm.pdf' : 'cv-web.pdf'
+               else
+                 "#{@build_name}.pdf"
+               end
 
     out = "#{@build_dir}/#{out_name}"
 
     Asciidoctor.convert_file(
-      "#{@build_dir}/cv.asciidoc",
+      "#{@build_dir}/#{@build_name}-#{@doc_type}.asciidoc",
       backend: :pdf,
       safe: :unsafe,
       to_file: out
@@ -95,6 +134,14 @@ class Build
 
   def part(part)
     File.read("src/include/#{part}.asciidoc") + "\n"
+  end
+
+  def path_before_theme
+    if @command.eql?(:build)
+      @build_dir + '/'
+    else
+      ''
+    end
   end
 end
 

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+asciidoctor-pdf <%= @build_name %>-<%= @doc_type %>.asciidoc -o <%= @build_name %>-<%= @doc_type %>.pdf
+if [ "$1" == "-o" ]; then
+  open -a Preview <%= @build_name %>-<%= @doc_type %>.pdf
+fi

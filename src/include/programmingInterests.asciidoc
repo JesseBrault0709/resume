@@ -4,12 +4,13 @@
 a|
 * Web development
 * Test-driven development
-* Continuous integration/deployment
+* Continuous integration and deployment
 a|
 * Programming languages
 * Compilers
 * Git, Github
 a|
+* ORMs
 * Open-source software
 * Creating tools and plugins
 |===

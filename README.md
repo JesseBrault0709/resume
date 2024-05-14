@@ -4,15 +4,12 @@
 
 To make creating variations of my résumé/cv easier, I created a simple ruby program. The output is a pdf using `asciidoctor-pdf`. 
 
-To build from the source, simply run `./resume` from the root directory. Pre-requisites:
+To build from the source, simply run `./resume build` from the root directory. Pre-requisites:
 * `ruby` and `bundler` are installed
 * run `bundler install`
 
-Command-line options for `./resume`:
-* `--build-name` | `-n`: the name of the build folder to be created in `builds`, as well as the name of the pdf to generate.
-* `--include_time` | `-t`: include the time in the build folder name.
-* `--job_title` | `-j`: defaults to `Full-Stack Software Engineer`.
-* `--jvm`: emphasize JVM languages/projects (default).
-* `--web`: emphasize web languages/projects.
-* `--page_size`: defaults to `a4`.
-* `--open` | `-o`: automatically open the built PDF in the Preview app (Mac OS only).
+There are two possible commands: `./resume build` and `./resume create`. The first generates the necessary files,
+builds them, and can additionally open the built resume in Preview (Mac OS only). The latter generates only
+the necessary files, as well as a shell script `./build` in the build directory which can be used to build the file. This allows for customization of the asciidoc file before building it.
+
+Use `./build help` or `./build help <command>` for more information about CLI options for each command.

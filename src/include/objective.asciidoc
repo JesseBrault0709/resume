@@ -3,5 +3,3 @@
 I am a former classical musician seeking a career in software development.
 I have been immersing myself in the craft of computer programming for five years.
 I am passionate about honing my skills and creating scalable, maintainable software that delivers results.
-I am quick to learn new libraries and technologies, and
-am fascinated by programming languages and technology.

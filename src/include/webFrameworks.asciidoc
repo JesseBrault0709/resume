@@ -1,1 +1,1 @@
-* *JavaScript/TypeScript*: NodeJS, React, Express, Prisma, GraphQL, fp-ts, VSCode.
+* *JavaScript/TypeScript*: NodeJS, React, Express, Prisma, GraphQL, VSCode.
