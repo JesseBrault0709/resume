@@ -12,4 +12,4 @@ There are two possible commands: `./resume build` and `./resume create`. The fir
 builds them, and can additionally open the built resume in Preview (Mac OS only). The latter generates only
 the necessary files, as well as a shell script `./build` in the build directory which can be used to build the file. This allows for customization of the asciidoc file before building it.
 
-Use `./build help` or `./build help <command>` for more information about CLI options for each command.
+Use `./resume help` or `./resume help <command>` for more information about CLI options for each command.
