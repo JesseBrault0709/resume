@@ -6,10 +6,12 @@ a|
 * Test-driven development
 * Continuous integration and deployment
 a|
+* REST protocol
+* Dependency injection
 * Programming languages
 * Compilers
-* Git, Github
 a|
+* Git, Github
 * ORMs
 * Open-source software
 * Creating tools and plugins
