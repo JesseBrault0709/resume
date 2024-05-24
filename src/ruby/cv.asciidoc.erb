@@ -56,7 +56,7 @@ icon:github@fab[] icon:linkedin@fab[] JesseBrault0709
 
 == Languages
 
-<% if @is_jvm %>
+<% if @type == :jvm %>
 <%= parts :jvmLanguages, :webLanguages %>
 <% else %>
 <%= parts :webLanguages, :jvmLanguages %>
@@ -64,7 +64,7 @@ icon:github@fab[] icon:linkedin@fab[] JesseBrault0709
 <%= part :otherLanguages %>
 == Frameworks, Libraries, and Technologies
 
-<% if @is_jvm %>
+<% if @type == :jvm %>
 <%= parts :jvmFrameworks, :webFrameworks %>
 <% else %>
 <%= parts :webFrameworks, :jvmFrameworks %>
@@ -72,7 +72,7 @@ icon:github@fab[] icon:linkedin@fab[] JesseBrault0709
 <%= part :otherTechnologies %>
 == Selected Projects footnote:[All projects can be viewed on https://github.com/JesseBrault0709[Github]]
 
-<% if @is_jvm %>
+<% if @type == :jvm %>
 <%= parts :jvmProjects, :webProjects %>
 <% else %>
 <%= parts :webProjects, :jvmProjects %>

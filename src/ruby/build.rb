@@ -29,7 +29,7 @@ class BuildCli < Thor
       options['include-time'],
       options['job-title'],
       options['cover-page'],
-      options[:jvm],
+      options[:web] ? :web : :jvm,
       options['page-size'],
       options[:open]
     ).build
@@ -44,7 +44,7 @@ class BuildCli < Thor
       false,
       options['job-title'],
       options['cover-page'],
-      options[:jvm],
+      options[:web] ? :web : :jvm,
       options['page-size'],
       false
     ).files(true)
@@ -52,7 +52,7 @@ class BuildCli < Thor
 end
 
 class Build
-  def initialize(command, build_name, doc_type, include_time, job_title, cover_page, is_jvm, page_size, open)
+  def initialize(command, build_name, doc_type, include_time, job_title, cover_page, type, page_size, open)
     @command = command
     @build_name = build_name
     @doc_type = doc_type
@@ -67,7 +67,8 @@ class Build
       @build_dir = "builds/#{date_time}-#{@build_name}"
     end
 
-    @is_jvm = is_jvm
+    @type == type
+
     @job_title = job_title
     @cover_page = cover_page
     @page_size = page_size
@@ -109,7 +110,7 @@ class Build
 
   def convert_and_open
     out_name = if @build_name.empty?
-                 @is_jvm ? 'cv-jvm.pdf' : 'cv-web.pdf'
+                 @type == :jvm ? 'cv-jvm.pdf' : 'cv-web.pdf'
                else
                  "#{@build_name}.pdf"
                end
