@@ -5,8 +5,8 @@ in Java for facilitating web-development in Groovy, emphasizing the model-view-c
 Includes a custom templating language inspired by ReactJS, with a compiler developed with the ANTLR
 parser generator. 2024 _(in progress)_.
 * *ssg*, or *Static Site Generator*: A highly-extensible CLI application written in Groovy for
-statically generating websites from text files and other input. 2023.
+statically generating websites from text files and other input. 2023–2024.
 * *fsm*, or *Finite State Machines*: a Java library with an easy-to-use DSL to incorporate various
-kinds of finite state machines into applications. 2022.
+kinds of finite state machines into applications. 2022–2023.
 * *jbarchiva*: A Gradle plugin to facilitate access to my personal Maven repository at
 https://archiva.jessebrault.com/[archiva.jessebrault.com]. 2022–2024.
