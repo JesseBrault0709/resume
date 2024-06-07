@@ -15,7 +15,7 @@ class BuildCli < Thor
   class_option 'job-title', aliases: :j, default: 'Full-Stack Software Engineer', desc: 'the job title, such as "Software Engineer"'
   class_option 'cover-page', aliases: :c, type: :boolean, desc: 'include the cover page'
   class_option :jvm, type: :boolean, default: true, desc: 'emphasize jvm experience'
-  class_option :web, type: :boolean, desc: 'emphasize web experience'
+  class_option :web, type: :boolean, default: false, desc: 'emphasize web experience'
   class_option 'page-size', default: 'a4', desc: 'the page size, such as "a4" or "letter"'
 
   desc 'build', 'build the résumé'
@@ -29,7 +29,7 @@ class BuildCli < Thor
       options['include-time'],
       options['job-title'],
       options['cover-page'],
-      options[:web] ? :web : :jvm,
+      options[:jvm] ? :jvm : :web,
       options['page-size'],
       options[:open]
     ).build
@@ -44,7 +44,7 @@ class BuildCli < Thor
       false,
       options['job-title'],
       options['cover-page'],
-      options[:web] ? :web : :jvm,
+      options[:jvm] ? :jvm : :web,
       options['page-size'],
       false
     ).files(true)
@@ -143,6 +143,14 @@ class Build
     else
       ''
     end
+  end
+
+  def is_jvm
+    @type == :jvm
+  end
+
+  def is_web
+    @type == :web
   end
 end
 
